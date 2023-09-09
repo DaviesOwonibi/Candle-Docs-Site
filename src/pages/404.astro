@@ -1,0 +1,111 @@
+---
+import Nav from "./components/Sidebar"
+---
+
+<script>
+  let torch;
+  torch = document.querySelector(".torch");
+
+  const moveTorch = (event) => {
+    torch.style.top = event.clientY + "px";
+    torch.style.left = event.clientX + "px";
+  };
+
+  torch.addEventListener("mousedown", () => {
+        // Add your click event code here
+        window.location.href = "/";
+    });
+
+document.addEventListener("mousemove", moveTorch);
+</script>
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>404</title>
+	</head>
+	<body>
+		
+<div class="text">
+  <h1>404</h1>
+	<h2>Uh, Ohh</h2>
+  <h3>Sorry we can't find what you are looking for.<br>All we have is a candle and some docs.<br>Click anywhere to head home.</h3>
+</div>
+<div class="torch"></div>
+	</body>
+</html>
+
+<style>
+	
+html {
+  height: 100%;
+}
+
+body {  
+  height: 100%;
+  /* background: url("https://wallpapercave.com/wp/6SLzBEY.jpg") no-repeat left top; */
+  background: url("https://images.unsplash.com/photo-1601478191004-97e62a391b7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80") no-repeat left top;
+  background-size: cover;  
+  overflow: hidden;
+	
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.text h1{
+  color: #fff;
+	margin-top: -200px;
+  font-size: 15em;
+	text-align: center;
+	text-shadow: -5px 5px 0px rgba(0,0,0,0.9), -10px 10px 0px rgba(0,0,0,0.6), -15px 15px 0px rgba(0,0,0,0.4);
+	font-family: monospace;
+  font-weight: bold;
+}
+
+.text h2{
+  color: #fff;
+  font-size: 5em;
+	text-shadow: -5px 5px 0px rgba(0,0,0,0.7);
+	text-align: center;
+	margin-top: -150px;
+	font-family: monospace;
+  font-weight: bold;
+}
+.text h3{
+  color: white;
+	margin-left: 30px;
+  font-size: 2em;
+	text-shadow: -5px 5px 0px rgba(0,0,0,0.7);
+	margin-top: -40px;
+	font-family: monospace;
+  font-weight: bold;
+}
+.torch {
+  margin: -150px 0 0 -150px;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 0 9999em #000000f7;
+	opacity: 1;
+  border-radius: 50%;
+  position: fixed;
+	background: rgba(0,0,0,0.3);
+  
+  &:after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    box-shadow: inset 0 0 40px 2px #000,
+			0 0 20px 4px rgba(13,13,10,0.2);  
+  }
+}
+</style>
